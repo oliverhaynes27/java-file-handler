@@ -33,6 +33,11 @@ public class JavaFileWatcher {
         Path path = Paths.get(directoryPath);
         path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);
 
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("\nClosing file watcher...");
+            printSummaryStats();
+        }));
+
         // Registering the path to the watchService and specifying the events to watch for
         while(true) {
 
@@ -140,7 +145,8 @@ public class JavaFileWatcher {
         {
             String type = event.getEventType();
 
-            if (type.equals("ENTRY_CREATE!")) {
+            if (type.equals("ENTRY_CREATE")) 
+                {
                 created++;
             }
             else if (type.startsWith("ENTRY_MODIFY"))
