@@ -129,4 +129,38 @@ public class JavaFileWatcher {
 
 
     }
+
+    public static void printSummaryStats() {
+
+        int created = 0;
+        int modified = 0;
+        int deleted = 0;
+
+        for (EventFormatter event : eventHistory)
+        {
+            String type = event.getEventType();
+
+            if (type.equals("ENTRY_CREATE!")) {
+                created++;
+            }
+            else if (type.startsWith("ENTRY_MODIFY"))
+            {
+                modified++;
+            }
+            else if (type.equals("ENTRY_DELETE"))
+            {
+                deleted++;
+            }
+        }
+        
+        System.out.println("\n=================================");
+        System.out.println("        EVENT SUMMARY");
+        System.out.println("=================================");
+        System.out.println("Files Created : " + created);
+        System.out.println("Files Modified: " + modified);
+        System.out.println("Files Deleted : " + deleted);
+        System.out.println("Total Events  : " + eventHistory.size());
+        System.out.println("=================================");
+    }
+    
 }
