@@ -137,12 +137,19 @@ public class JavaFileWatcher {
 
     public static void printSummaryStats() {
 
+        Map<String, Integer> fileActivity = new HashMap<>();
+
         int created = 0;
         int modified = 0;
         int deleted = 0;
 
         for (EventFormatter event : eventHistory)
         {
+
+            String fileName = event.getFileName();
+
+            fileActivity.put(fileName, fileActivity.getOrDefault(fileName, 0) +1 );
+
             String type = event.getEventType();
 
             if (type.equals("ENTRY_CREATE")) 
@@ -158,6 +165,19 @@ public class JavaFileWatcher {
                 deleted++;
             }
         }
+
+        String mostActiveFile = "None";
+        int highestCount = 0;
+
+        for (Map.Entry<String, Integer> entry : fileActivity.entrySet())
+        {
+
+            if (entry.getValue() > highestCount)
+            {
+                highestCount = entry.getValue();
+                mostActiveFile = entry.getKey();
+            }
+        }
         
         System.out.println("\n=================================");
         System.out.println("        EVENT SUMMARY");
@@ -166,6 +186,7 @@ public class JavaFileWatcher {
         System.out.println("Files Modified: " + modified);
         System.out.println("Files Deleted : " + deleted);
         System.out.println("Total Events  : " + eventHistory.size());
+        System.out.println("File with most Activity : " + mostActiveFile + " (" + highestCount + " events)");
         System.out.println("=================================");
     }
     
