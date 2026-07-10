@@ -116,6 +116,8 @@ public class JavaFileWatcher {
                     System.out.println("_______________________________");
                     System.out.println(event);
 
+                    gui.addEvent(event);
+
                     it.remove();
                 }
             }
