@@ -39,6 +39,7 @@ public class JavaFileWatcher {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("\nClosing file watcher...");
             printSummaryStats();
+            exportToCSV();
         }));
 
         // Registering the path to the watchService and specifying the events to watch for
