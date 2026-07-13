@@ -33,8 +33,16 @@ public class JavaFileWatcher {
 
         // Creating the watchService, which will monitor the directory from the directoryPath, if any changes occur (i.e. File creation, modification, or deletion)
 
-        Path path = Paths.get(directoryPath);
-        path.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);
+        Path root = Paths.get(directoryPath);
+
+        Files.walk(root).filter(Files::isDirectory).ForEach(dir -> {
+            try{
+                dir.register(watchService, StandardWatchEventKinds.ENTRY_CREATE, StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);
+                System.out.println("Watching: " + dir);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("\nClosing file watcher...");
