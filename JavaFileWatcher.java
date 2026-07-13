@@ -66,6 +66,8 @@ public class JavaFileWatcher {
                 }
                 
                 Path file = currentDir.resolve((Path) event.context());
+                
+                String relativePath = root.relativize(file).toString();
 
                 if (event.kind() == StandardWatchEventKinds.ENTRY_CREATE && Files.isDirectory(file)) {
 
