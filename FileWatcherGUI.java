@@ -7,6 +7,7 @@ import javax.swing.RowFilter;
 public class FileWatcherGUI extends JFrame {
 
     private DefaultTableModel tableModel;
+    private TableRowSorter<DefaultTableModel> sorter;
 
     public FileWatcherGUI()
     {
@@ -25,6 +26,9 @@ public class FileWatcherGUI extends JFrame {
         tableModel.addColumn("Size");
 
         JTable table = new JTable(tableModel);
+
+        sorter = new TableRowSorter<>(tableModel);
+        table.setRowSorter(sorter);
 
         java.awt.Font currentFont = table.getTableHeader().getFont();
         table.getTableHeader().setFont(currentFont.deriveFont(java.awt.Font.BOLD));
