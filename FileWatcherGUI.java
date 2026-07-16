@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import javax.swing.table.TableRowSorter;
+import javax.swing.RowFilter;
 
 public class FileWatcherGUI extends JFrame {
 
