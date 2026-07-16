@@ -33,6 +33,22 @@ public class FileWatcherGUI extends JFrame {
         java.awt.Font currentFont = table.getTableHeader().getFont();
         table.getTableHeader().setFont(currentFont.deriveFont(java.awt.Font.BOLD));
 
+        JTextField searchField = new JTextField(20);
+        JButton searchButton = new JButton("Search");
+        JButton clearButton = new JButton("Clear");
+
+        JPanel topPanel = new JPanel();
+
+        topPanel.add(new JLabel("Search: "));
+        topPanel.add(searchField);
+        topPanel.add(searchButton);
+        topPanel.add(clearButton);
+
+        searchButton.addActionListener(e -> {
+            String text = searchField.getText();
+        })
+
+
         add(new JScrollPane(table), BorderLayout.CENTER);
 
         setVisible(true);
