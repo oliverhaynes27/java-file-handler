@@ -1,7 +1,1 @@
 ID,Event Type,File Name,Timestamp,File Size,Path
-1,ENTRY_CREATE,New folder,2026-07-13T17:08:42.340315800,0,"C:\Users\olive\OneDrive\Desktop\FileTester\New folder"
-2,ENTRY_DELETE,New folder,2026-07-13T17:08:44.293724,0,"C:\Users\olive\OneDrive\Desktop\FileTester\New folder"
-3,ENTRY_CREATE,Hello,2026-07-13T17:08:44.293724,0,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello"
-4,ENTRY_DELETE,7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf,2026-07-13T17:08:47.289469600,0,"C:\Users\olive\OneDrive\Desktop\FileTester\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf"
-5,ENTRY_CREATE,7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf,2026-07-13T17:08:47.289469600,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf"
-6,ENTRY_MODIFY (x2),Hello,2026-07-13T17:08:50.249362900,0,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello"

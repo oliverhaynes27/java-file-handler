@@ -46,7 +46,25 @@ public class FileWatcherGUI extends JFrame {
 
         searchButton.addActionListener(e -> {
             String text = searchField.getText();
-        })
+
+            if (text.trim().isEmpty()) {
+                sorter.setRowFilter(null);
+            } else 
+            {
+                sorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, 2));
+            }
+        });
+
+        clearButton.addActionListener(e -> {
+
+            searchField.setText("");
+            sorter.setRowFilter(null);
+        });
+
+        add(topPanel, BorderLayout.NORTH);
+        add(new JScrollPane(table), BorderLayout.CENTER);
+
+        setVisible(true);
 
 
         add(new JScrollPane(table), BorderLayout.CENTER);
