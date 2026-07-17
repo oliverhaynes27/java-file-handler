@@ -43,6 +43,7 @@ public class FileWatcherGUI extends JFrame {
         topPanel.add(searchField);
         topPanel.add(searchButton);
         topPanel.add(clearButton);
+        topPanel.add(pauseButton);
 
         searchButton.addActionListener(e -> {
             performSearch(searchField);
@@ -56,6 +57,17 @@ public class FileWatcherGUI extends JFrame {
 
             searchField.setText("");
             sorter.setRowFilter(null);
+        });
+
+        pauseButton.addActionListener(e -> {
+            if (JavaFileWatcher.isPaused()) {
+                JavaFileWatcher.setPaused(false);
+                pauseButton.setText("Pause Monitoring");
+            }
+            else{
+                JavaFileWatcher.setPaused(true);
+                pauseButton.setText("Resume Monitoring");
+            }
         });
 
         add(topPanel, BorderLayout.NORTH);
