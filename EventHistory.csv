@@ -1,12 +1,1 @@
 ID,Event Type,File Name,Timestamp,File Size,Path
-1,ENTRY_DELETE,hiya - Copy (2).pdf,2026-07-16T13:35:26.471906400,0,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello\hiya - Copy (2).pdf"
-2,ENTRY_CREATE,hiya - Copy (2).pdf,2026-07-16T13:35:26.483378300,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\hiya - Copy (2).pdf"
-3,ENTRY_MODIFY (x1),Hello,2026-07-16T13:35:30.171102500,4096,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello"
-4,ENTRY_DELETE,hiya - Copy (2).pdf,2026-07-16T13:35:37.146744900,0,"C:\Users\olive\OneDrive\Desktop\FileTester\hiya - Copy (2).pdf"
-5,ENTRY_MODIFY (x2),hiya - Copy (2).pdf,2026-07-16T13:35:37.150748700,0,"C:\Users\olive\OneDrive\Desktop\FileTester\hiya - Copy (2).pdf"
-6,ENTRY_CREATE,hiya - Copy (2).pdf,2026-07-16T13:35:37.152747100,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello\hiya - Copy (2).pdf"
-7,ENTRY_MODIFY (x1),Hello,2026-07-16T13:35:41.545126,4096,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello"
-8,ENTRY_DELETE,7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf,2026-07-16T13:35:49.055987600,0,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf"
-9,ENTRY_MODIFY (x2),hiya - Copy (2).pdf,2026-07-16T13:35:49.057998700,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello\hiya - Copy (2).pdf"
-10,ENTRY_CREATE,7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf,2026-07-16T13:35:49.060,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy (3).pdf"
-11,ENTRY_MODIFY (x1),Hello,2026-07-16T13:35:52.492151,4096,"C:\Users\olive\OneDrive\Desktop\FileTester\Hello"

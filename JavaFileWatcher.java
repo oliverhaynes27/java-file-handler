@@ -16,6 +16,7 @@ public class JavaFileWatcher {
     private static final Map<String, PendingModify> pendingMods = new HashMap<>();
     private static final long DEBOUNCE_MS = 800;
     private static final Map<WatchKey, Path> watchKeys = new HashMap<>();
+    private static boolean paused = false;
 
     public static final String directoryPath = "C:\\Users\\olive\\OneDrive\\Desktop\\FileTester";
 
@@ -60,6 +61,10 @@ public class JavaFileWatcher {
             Path currentDir = watchKeys.get(key);
 
             for (WatchEvent<?> event : key.pollEvents()) {
+
+                if (paused) {
+                    continue;
+                }
 
                 if(event.kind() == StandardWatchEventKinds.OVERFLOW) {
                     continue;
