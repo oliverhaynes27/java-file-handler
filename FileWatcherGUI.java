@@ -25,6 +25,7 @@ public class FileWatcherGUI extends JFrame {
         tableModel.addColumn("Size");
 
         JTable table = new JTable(tableModel);
+        JLabel statusLabel = new JLabel("Status: Monitoring");
 
         sorter = new TableRowSorter<>(tableModel);
         table.setRowSorter(sorter);
@@ -44,6 +45,7 @@ public class FileWatcherGUI extends JFrame {
         topPanel.add(searchButton);
         topPanel.add(clearButton);
         topPanel.add(pauseButton);
+        topPanel.add(statusLabel);
 
         searchButton.addActionListener(e -> {
             performSearch(searchField);
@@ -61,12 +63,15 @@ public class FileWatcherGUI extends JFrame {
 
         pauseButton.addActionListener(e -> {
             if (JavaFileWatcher.isPaused()) {
+
                 JavaFileWatcher.setPaused(false);
                 pauseButton.setText("Pause Monitoring");
+                statusLabel.setText("Status: Monitoring");
             }
-            else{
+            else {
                 JavaFileWatcher.setPaused(true);
                 pauseButton.setText("Resume Monitoring");
+                statusLabel.setText("Status: Paused");
             }
         });
 
