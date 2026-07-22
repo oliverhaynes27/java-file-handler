@@ -21,6 +21,7 @@ public class FileWatcherGUI extends JFrame {
         tableModel.addColumn("ID");
         tableModel.addColumn("Event");
         tableModel.addColumn("File");
+        tableModel.addColumn("Extension");
         tableModel.addColumn("Time");
         tableModel.addColumn("Relative Path");
         tableModel.addColumn("Size");
