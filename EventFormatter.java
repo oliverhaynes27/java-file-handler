@@ -10,11 +10,12 @@ public class EventFormatter
     private String filePath;
     private long fileSize;
     private String relativePath;
+    private String FileExtension;
     private int ID;
 
     private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    public EventFormatter(String eventType, String fileName, LocalDateTime eventTime, String filePath, long fileSize, String relativePath, int ID)
+    public EventFormatter(String eventType, String fileName, LocalDateTime eventTime, String filePath, long fileSize, String relativePath, String fileExtension, int ID)
     {
         this.eventType = eventType;
         this.fileName = fileName;
@@ -22,6 +23,7 @@ public class EventFormatter
         this.filePath = filePath;
         this.fileSize = fileSize;
         this.relativePath = relativePath;
+        this.fileExtension = fileExtension;
         this.ID = ID;
     }
 
