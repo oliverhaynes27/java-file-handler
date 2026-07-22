@@ -121,9 +121,10 @@ public class FileWatcherGUI extends JFrame {
                    "Event ID: " + tableModel.getValueAt(row,0) + "\n\n" +
                    "Event Type: " + tableModel.getValueAt(row, 1) + "\n\n" +
                    "File Name: " + tableModel.getValueAt(row, 2) + "\n\n" +
-                   "Time: " + tableModel.getValueAt(row, 3) + "\n" +
-                   "Relative Path: " + tableModel.getValueAt(row, 4) + "\n" +
-                   "Size: " + tableModel.getValueAt(row, 5);
+                   "Extension: " + tableModel.getValueAt(row, 3) + "\n\n" +
+                   "Time: " + tableModel.getValueAt(row, 4) + "\n" +
+                   "Relative Path: " + tableModel.getValueAt(row, 5) + "\n" +
+                   "Size: " + tableModel.getValueAt(row, 6);
 
         JOptionPane.showMessageDialog(this, message, "Event Details", JOptionPane.INFORMATION_MESSAGE);
     }
@@ -137,6 +138,7 @@ public class FileWatcherGUI extends JFrame {
                 event.getID(),
                 event.getEventType(),
                 event.getFileName(),
+                event.getFileExtension(),
                 event.getEventTime(),
                 event.getRelativePath(),
                 event.getFileSize() + " bytes"
