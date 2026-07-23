@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.time.Duration;
 
 // Required imports for IO Exception and file handling
 
@@ -17,6 +18,7 @@ public class JavaFileWatcher {
     private static final long DEBOUNCE_MS = 800;
     private static final Map<WatchKey, Path> watchKeys = new HashMap<>();
     private static boolean paused = false;
+    private static final LocalDateTime startTime = LocalDateTime.now();
 
     public static final String directoryPath = "C:\\Users\\olive\\OneDrive\\Desktop\\FileTester";
 
