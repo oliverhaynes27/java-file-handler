@@ -258,6 +258,7 @@ public class JavaFileWatcher {
         System.out.println("Files Deleted : " + deleted);
         System.out.println("Total Events  : " + eventHistory.size());
         System.out.println("File with most Activity : " + mostActiveFile + " (" + highestCount + " events)");
+        System.out.println("Total Runtime:" + hours + "h " + minutes + "m " + seconds + "s");
         System.out.println("=================================");
     }
 
