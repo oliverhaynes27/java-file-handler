@@ -98,13 +98,13 @@ public class FileWatcherGUI extends JFrame {
                 JavaFileWatcher.setPaused(false);
                 pauseButton.setText("Pause Monitoring");
                 statusLabel.setText("Status: Monitoring");
-                statusLabel.setForeground(Color.GREEN.darker());
+                pauseButton.setForeground(Color.GREEN.darker());
             }
             else {
                 JavaFileWatcher.setPaused(true);
                 pauseButton.setText("Resume Monitoring");
                 statusLabel.setText("Status: Paused");
-                statusLabel.setForeground(Color.RED);
+                pauseButton.setForeground(Color.RED);
             }
         });
 
