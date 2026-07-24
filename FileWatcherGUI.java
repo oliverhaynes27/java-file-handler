@@ -71,6 +71,10 @@ public class FileWatcherGUI extends JFrame {
         topPanel.add(searchField);
         topPanel.add(searchButton);
         topPanel.add(clearButton);
+
+        topPanel.add(new JLabel("Event Type:"));
+        topPanel.add(eventFilter);
+
         topPanel.add(pauseButton);
         topPanel.add(statusLabel);
 
