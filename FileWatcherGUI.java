@@ -67,18 +67,21 @@ public class FileWatcherGUI extends JFrame {
         );
 
         JPanel topPanel = new JPanel();
+        JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
         topPanel.add(new JLabel("Search Filename: "));
         topPanel.add(searchField);
         topPanel.add(searchButton);
         topPanel.add(clearButton);
-        topPanel.add(exportButton);
 
         topPanel.add(new JLabel("Event Type:"));
         topPanel.add(eventFilter);
 
         topPanel.add(pauseButton);
         topPanel.add(statusLabel);
+
+        bottomPanel.add(exportButton);
+        add(bottomPanel, BorderLayout.SOUTH);
 
         searchButton.addActionListener(e -> {
             filterTable(searchField, eventFilter);
