@@ -54,6 +54,7 @@ public class FileWatcherGUI extends JFrame {
         JTextField searchField = new JTextField(20);
         JButton searchButton = new JButton("Search");
         JButton clearButton = new JButton("Clear");
+        JButton exportButton = new JButton("Export CSV");
         JButton pauseButton = new JButton("Pause Monitoring");
 
         JComboBox<String> eventFilter = new JComboBox<>(
@@ -71,6 +72,7 @@ public class FileWatcherGUI extends JFrame {
         topPanel.add(searchField);
         topPanel.add(searchButton);
         topPanel.add(clearButton);
+        topPanel.add(exportButton);
 
         topPanel.add(new JLabel("Event Type:"));
         topPanel.add(eventFilter);
