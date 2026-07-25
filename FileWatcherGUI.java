@@ -113,6 +113,17 @@ public class FileWatcherGUI extends JFrame {
             }
         });
 
+        exportButton.addActionListener(e -> {
+            JavaFileWatcher.exportToCSV();
+
+            JOptionPane.showMessageDialog(
+                this,
+                "Successfully exported Event History",
+                "EXPORT COMPLETE",
+                JOptionPane.INFORMATION_MESSAGE
+            );
+        });
+
         add(topPanel, BorderLayout.NORTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
 
