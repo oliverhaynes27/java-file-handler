@@ -2,6 +2,9 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import javax.swing.table.TableRowSorter;
+import javax.swing.JFileChooser;
+import java.io.File;
+import java.nio.file.Path;
 
 public class FileWatcherGUI extends JFrame {
 

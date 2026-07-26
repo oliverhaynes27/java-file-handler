@@ -52,7 +52,7 @@ public class JavaFileWatcher {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("\nClosing file watcher...");
             printSummaryStats();
-            exportToCSV();
+            exportToCSV(Paths.get("EventHistory.csv"));
         }));
 
         // Registering the path to the watchService and specifying the events to watch for
@@ -270,9 +270,8 @@ public class JavaFileWatcher {
         JavaFileWatcher.paused = paused;
     }
 
-    public static void exportToCSV() {
+    public static void exportToCSV(Path output) {
 
-    Path output = Paths.get("EventHistory.csv");
     System.out.println("CSV saved to: " + output.toAbsolutePath());
 
     try (BufferedWriter writer = Files.newBufferedWriter(output)) {
