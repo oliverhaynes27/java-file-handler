@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import javax.swing.table.TableRowSorter;
-import javax.swing.JFileChooser;
+
 import java.io.File;
 import java.nio.file.Path;
 
@@ -117,14 +117,24 @@ public class FileWatcherGUI extends JFrame {
         });
 
         exportButton.addActionListener(e -> {
-            JavaFileWatcher.exportToCSV();
 
-            JOptionPane.showMessageDialog(
-                this,
-                "Successfully exported Event History",
-                "EXPORT COMPLETE",
-                JOptionPane.INFORMATION_MESSAGE
-            );
+            JFileChooser chooser = new JFileChooser();
+            chooser.setSelectedFile(new File("EventHistory.csv"));
+
+            int result = chooser.showSaveDialog(this);
+
+            if(result == JFileChooser.APPROVE_OPTION) {
+
+                JavaFileWatcher.exportToCSV(chooser.getSelectedFile().toPath());
+
+                JOptionPane.showMessageDialog(
+                    this,
+                    "Successfully exported Event History",
+                    "EXPORT COMPLETE",
+                    JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+
         });
 
         add(topPanel, BorderLayout.NORTH);
