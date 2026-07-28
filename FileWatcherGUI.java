@@ -60,6 +60,11 @@ public class FileWatcherGUI extends JFrame {
         JButton exportButton = new JButton("Export CSV");
         JButton pauseButton = new JButton("Pause Monitoring");
 
+        JCheckBox txtBox = new JCheckBox("TXT", true);
+        JCheckBox pdfBox = new JCheckBox("PDF", true);
+        JCheckBox javaBox = new JCheckBox("Java", true);
+        JCheckBox otherBox = new JCheckBox("Other", true);
+
         JComboBox<String> eventFilter = new JComboBox<>(
             new String[] {
                 "All",
