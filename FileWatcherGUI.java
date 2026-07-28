@@ -76,6 +76,9 @@ public class FileWatcherGUI extends JFrame {
 
         JPanel topPanel = new JPanel();
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        JPanel sidePanel = new JPanel();
+        sidePanel.setLayout(new BoxLayout(sidePanel, BoxLayout.Y_AXIS));
+        
 
         topPanel.add(new JLabel("Search Filename: "));
         topPanel.add(searchField);
@@ -90,6 +93,13 @@ public class FileWatcherGUI extends JFrame {
 
         bottomPanel.add(exportButton);
         add(bottomPanel, BorderLayout.SOUTH);
+
+        sidePanel.add(new JLabel("Extensions"));
+        sidePanel.add(txtBox);
+        sidePanel.add(pdfBox);
+        sidePanel.add(javaBox);
+        sidePanel.add(otherBox);
+        add(sidePanel, BorderLayout.WEST);
 
         searchButton.addActionListener(e -> {
             filterTable(searchField, eventFilter);
