@@ -78,7 +78,7 @@ public class FileWatcherGUI extends JFrame {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JPanel sidePanel = new JPanel();
         sidePanel.setLayout(new BoxLayout(sidePanel, BoxLayout.Y_AXIS));
-        
+        sidePanel.setPreferredSize(new Dimension(90, 0));
 
         topPanel.add(new JLabel("Search Filename: "));
         topPanel.add(searchField);
