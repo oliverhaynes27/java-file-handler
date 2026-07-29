@@ -2,6 +2,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import javax.swing.table.TableRowSorter;
+import java.util.Map;
+import java.util.HashMap;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -16,6 +18,10 @@ public class FileWatcherGUI extends JFrame {
     private JLabel deletedLabel;
     private JLabel totalLabel;
     private JLabel activeFileLabel;
+
+    private int created = 0;
+    private int modified = 0;
+    private int deleted = 0;
 
     public FileWatcherGUI()
     {
