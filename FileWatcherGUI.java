@@ -124,7 +124,15 @@ public class FileWatcherGUI extends JFrame {
         totalLabel = new JLabel("Total Events: 0");
         activeFileLabel = new JLabel("<html>Most Active:<br>None</html>");
 
-        
+        statsPanel.add(createdLabel);
+        statsPanel.add(modifiedLabel);
+        statsPanel.add(deletedLabel);
+        statsPanel.add(totalLabel);
+        statsPanel.add(Box.createVerticalStrut(10));
+        statsPanel.add(activeFileLabel);
+
+        sidePanel.add(statsPanel);
+
 
 
         add(sidePanel, BorderLayout.WEST);
