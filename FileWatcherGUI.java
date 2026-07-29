@@ -11,6 +11,11 @@ public class FileWatcherGUI extends JFrame {
     private DefaultTableModel tableModel;
     private TableRowSorter<DefaultTableModel> sorter;
     private JTable table;
+    private JLabel createdLabel;
+    private JLabel modifiedLabel;
+    private JLabel deletedLabel;
+    private JLabel totalLabel;
+    private JLabel activeFileLabel;
 
     public FileWatcherGUI()
     {
