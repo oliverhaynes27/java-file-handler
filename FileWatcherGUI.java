@@ -110,6 +110,17 @@ public class FileWatcherGUI extends JFrame {
         sidePanel.add(pdfBox);
         sidePanel.add(javaBox);
         sidePanel.add(otherBox);
+
+        sidePanel.add(Box.createVerticalStrut(20));
+
+        JPanel statsPanel = new JPanel();
+        statsPanel.setLayout(new BoxLayout(statsPanel, BoxLayout.Y_AXIS));
+        statsPanel.setBorder(BorderFactory.createTitledBorder("Live Statistics"));
+        statsPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+
+
+
         add(sidePanel, BorderLayout.WEST);
 
         searchButton.addActionListener(e -> {
