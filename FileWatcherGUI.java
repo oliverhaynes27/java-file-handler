@@ -264,6 +264,24 @@ public class FileWatcherGUI extends JFrame {
             modifiedLabel.setText("Modified: " + modified);
             deletedLabel.setText("Deleted: " + deleted);
             totalLabel.setText("Total Events: " + (created + modified + deleted));
+
+            String fileName = event.getFileName();
+
+            fileActivity.put(fileName, fileActivity.getOrDefault(fileName, 0) + 1);
+
+            String busiest = "None";
+            int highest = 0;
+
+            for(Map.Entry<String, Integer> entry : fileActivity.entrySet()) {
+                if (entry.getValue() > highest) {
+                    highest = entry.getValue();
+                    busiest = entry.getKey();
+                }
+            }
+
+            activeFileLabel.setText(
+                "<html>Most Active:<br>" + busiest + "<br>(" + highest + " events)</html>"
+            );
         });
     }
 }
