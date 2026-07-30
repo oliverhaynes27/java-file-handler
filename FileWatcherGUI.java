@@ -18,6 +18,7 @@ public class FileWatcherGUI extends JFrame {
     private JLabel deletedLabel;
     private JLabel totalLabel;
     private JLabel activeFileLabel;
+    private Map<String, Integer> fileActivity = new HashMap<>();
 
     private int created = 0;
     private int modified = 0;
@@ -133,8 +134,6 @@ public class FileWatcherGUI extends JFrame {
 
         sidePanel.add(statsPanel);
 
-
-
         add(sidePanel, BorderLayout.WEST);
 
         searchButton.addActionListener(e -> {
@@ -246,6 +245,22 @@ public class FileWatcherGUI extends JFrame {
                 event.getRelativePath(),
                 event.getFileSize() + " bytes"
             });
+
+            String type = event.getEventType();
+
+            if(type.equals("ENTRY_CREATE")){
+                created++;
+            }
+
+            else if(type.startsWith("ENTRY_MODIFY")){
+                modified++;
+            }
+
+            else if(type.equals("ENTRY_DELETE")){
+                deleted++;
+            }
+
+            
         });
     }
 }
