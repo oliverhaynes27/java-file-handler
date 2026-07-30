@@ -260,7 +260,10 @@ public class FileWatcherGUI extends JFrame {
                 deleted++;
             }
 
-            
+            createdLabel.setText("Created: " + created);
+            modifiedLabel.setText("Modified: " + modified);
+            deletedLabel.setText("Deleted: " + deleted);
+            totalLabel.setText("Total Events: " + (created + modified + deleted));
         });
     }
 }
