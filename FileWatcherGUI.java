@@ -193,7 +193,7 @@ public class FileWatcherGUI extends JFrame {
         setVisible(true);
     }
 
-    private void filterTable(JTextField searchField, JComboBox<String> eventFilter)
+    private void filterTable(JTextField searchField, JComboBox<String> eventFilter, JCheckBox txtBox, JCheckBox pdfBox, JCheckBox javaBox, JCheckBox otherBox)
     {
         RowFilter<DefaultTableModel, Object> filter = new RowFilter<>() {
 
