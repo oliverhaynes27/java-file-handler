@@ -208,12 +208,24 @@ public class FileWatcherGUI extends JFrame {
 
                 String file = entry.getStringValue(2).toLowerCase();
                 String event = entry.getStringValue(1);
+                String extension = entry.getStringValue(3).toLowerCase();
                 String search = searchField.getText().toLowerCase();
                 String selected = eventFilter.getSelectedItem().toString();
                 boolean filenameMatch = file.contains(search);
 
                 boolean eventMatch = selected.equals("All") || event.equals(selected) || event.startsWith(selected);
 
+                boolean extensionMatch = false;
+
+                if (extension.equals("txt") && txtBox.isSelected()) {
+                    extensionMatch = true;
+                }
+                else if (extension.equals("java") && javaBox.isSelected()) {
+                    extensionMatch = true;
+                }
+                else if (extension.equals("java") && javaBox.isSelected()) {
+                    extensionMatch = true;
+                }
                 return filenameMatch && eventMatch;
             }
         };
