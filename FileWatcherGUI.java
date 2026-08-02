@@ -4,6 +4,7 @@ import java.awt.*;
 import javax.swing.table.TableRowSorter;
 import java.util.Map;
 import java.util.HashMap;
+import java.awt.event.ActionListener;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -77,6 +78,13 @@ public class FileWatcherGUI extends JFrame {
         JCheckBox javaBox = new JCheckBox("Java", true);
         JCheckBox otherBox = new JCheckBox("Other", true);
 
+        ActionListener extensionListener = e -> filterTable(searchField, eventFilter, txtBox, pdfBox, javaBox, otherBox);
+        
+        txtBox.addActionListener(extensionListener);
+        pdfBox.addActionListener(extensionListener);
+        javaBox.addActionListener(extensionListener);
+        otherBox.addActionListener(extensionListener);
+        
         JComboBox<String> eventFilter = new JComboBox<>(
             new String[] {
                 "All",
