@@ -77,13 +77,6 @@ public class FileWatcherGUI extends JFrame {
         JCheckBox pdfBox = new JCheckBox("PDF", true);
         JCheckBox javaBox = new JCheckBox("Java", true);
         JCheckBox otherBox = new JCheckBox("Other", true);
-
-        ActionListener extensionListener = e -> filterTable(searchField, eventFilter, txtBox, pdfBox, javaBox, otherBox);
-        
-        txtBox.addActionListener(extensionListener);
-        pdfBox.addActionListener(extensionListener);
-        javaBox.addActionListener(extensionListener);
-        otherBox.addActionListener(extensionListener);
         
         JComboBox<String> eventFilter = new JComboBox<>(
             new String[] {
@@ -93,6 +86,13 @@ public class FileWatcherGUI extends JFrame {
                 "ENTRY_DELETE"
             }
         );
+
+        ActionListener extensionListener = e -> filterTable(searchField, eventFilter, txtBox, pdfBox, javaBox, otherBox);
+
+        txtBox.addActionListener(extensionListener);
+        pdfBox.addActionListener(extensionListener);
+        javaBox.addActionListener(extensionListener);
+        otherBox.addActionListener(extensionListener);
 
         JPanel topPanel = new JPanel();
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -226,7 +226,12 @@ public class FileWatcherGUI extends JFrame {
                 else if (extension.equals("java") && javaBox.isSelected()) {
                     extensionMatch = true;
                 }
-                return filenameMatch && eventMatch;
+
+                else if (!extension.equals("txt") && !extension.equals("pdf") && otherBox.isSelected()) {
+                    extensionMatch = true;
+                }
+
+                return filenameMatch && eventMatch && extensionMatch;
             }
         };
 
