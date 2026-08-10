@@ -1,4 +1,5 @@
 import java.util.concurrent.atomic.AtomicInteger;
+// Imported utility to calculate atomic integers
 
 public class PendingModify 
 {
@@ -17,4 +18,5 @@ public class PendingModify
         lastEventTime = System.currentTimeMillis();
         count.incrementAndGet();
     }
+    // Updating the last time of the event and incrementing the count
 }
