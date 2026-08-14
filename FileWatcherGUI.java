@@ -195,7 +195,7 @@ public class FileWatcherGUI extends JFrame {
 
         });
 
-        clearHistoryButton.AddActionListener(e -> {
+        clearHistoryButton.addActionListener(e -> {
 
             int result = JOptionPane.showConfirmDialog(
                 this,
@@ -220,8 +220,12 @@ public class FileWatcherGUI extends JFrame {
                 deletedLabel.setText("Deleted: 0");
                 totalLabel.setText("Total Events: 0");
                 activeFileLabel.setText("<html>Most Active:<br>None</html>");
+
+                JavaFileWatcher.clearEventHistory();
+
+                System.out.println("--Event History cleared--");
             }
-        })
+        });
 
         add(topPanel, BorderLayout.NORTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
