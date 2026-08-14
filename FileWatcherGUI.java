@@ -204,6 +204,23 @@ public class FileWatcherGUI extends JFrame {
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.WARNING_MESSAGE
             );
+
+            if (result == JOptionPane.YES_OPTION) {
+
+                tableModel.setRowCount(0);
+
+                fileActivity.clear();
+
+                created = 0;
+                modified = 0;
+                deleted = 0;
+
+                createdLabel.setText("Created: 0");
+                modifiedLabel.setText("Modified: 0");
+                deletedLabel.setText("Deleted: 0");
+                totalLabel.setText("Total Events: 0");
+                activeFileLabel.setText("<html>Most Active:<br>None</html>");
+            }
         })
 
         add(topPanel, BorderLayout.NORTH);
