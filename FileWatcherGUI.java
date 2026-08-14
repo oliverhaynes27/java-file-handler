@@ -72,6 +72,7 @@ public class FileWatcherGUI extends JFrame {
         JButton clearButton = new JButton("Clear");
         JButton exportButton = new JButton("Export CSV");
         JButton pauseButton = new JButton("Pause Monitoring");
+        JButton clearHistoryButton = new JButton("Clear History");
 
         JCheckBox txtBox = new JCheckBox("TXT", true);
         JCheckBox pdfBox = new JCheckBox("PDF", true);
@@ -139,6 +140,7 @@ public class FileWatcherGUI extends JFrame {
         statsPanel.add(totalLabel);
         statsPanel.add(Box.createVerticalStrut(10));
         statsPanel.add(activeFileLabel);
+        statsPanel.add(clearHistoryButton);
 
         sidePanel.add(statsPanel);
 
@@ -192,6 +194,17 @@ public class FileWatcherGUI extends JFrame {
             }
 
         });
+
+        clearHistoryButton.AddActionListener(e -> {
+
+            int result = JOptionPane.showConfirmDialog(
+                this,
+                "Confirm clearing of history?",
+                "Clear History",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE
+            );
+        })
 
         add(topPanel, BorderLayout.NORTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
