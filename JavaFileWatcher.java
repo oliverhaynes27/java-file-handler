@@ -266,13 +266,13 @@ public class JavaFileWatcher {
         return paused;
     }
 
+    public static void setPaused(boolean paused) {
+        JavaFileWatcher.paused = paused;
+    }
+
     public static void clearEventHistory() {
         eventHistory.clear();
         ID = 1;
-    }
-
-    public static void setPaused(boolean paused) {
-        JavaFileWatcher.paused = paused;
     }
 
     public static void exportToCSV(Path output) {

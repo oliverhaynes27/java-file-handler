@@ -124,13 +124,13 @@ public class FileWatcherGUI extends JFrame {
 
         JPanel statsPanel = new JPanel();
         statsPanel.setLayout(new BoxLayout(statsPanel, BoxLayout.Y_AXIS));
-        statsPanel.setBorder(BorderFactory.createTitledBorder("Live Statistics"));
+        statsPanel.setBorder(BorderFactory.createTitledBorder("Statistics"));
         statsPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         createdLabel = new JLabel("Created: 0");
         modifiedLabel = new JLabel("Modified: 0");
         deletedLabel = new JLabel("Deleted: 0");
-        totalLabel = new JLabel("Total Events: 0");
+        totalLabel = new JLabel("Events: 0");
         activeFileLabel = new JLabel("<html>Most Active:<br>None</html>");
 
         statsPanel.add(createdLabel);
