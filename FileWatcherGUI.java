@@ -217,18 +217,18 @@ public class FileWatcherGUI extends JFrame {
 
                 boolean extensionMatch = false;
 
-                if (extension.equals("txt") && txtBox.isSelected()) {
-                    extensionMatch = true;
+                if (extension.equals("txt")) {
+                    extensionMatch = txtBox.isSelected();
                 }
-                else if (extension.equals("java") && javaBox.isSelected()) {
-                    extensionMatch = true;
+                else if (extension.equals("pdf")) {
+                    extensionMatch = pdfBox.isSelected();
                 }
-                else if (extension.equals("java") && javaBox.isSelected()) {
-                    extensionMatch = true;
+                else if (extension.equals("java")) {
+                    extensionMatch = javaBox.isSelected();
                 }
 
-                else if (!extension.equals("txt") && !extension.equals("pdf") && otherBox.isSelected()) {
-                    extensionMatch = true;
+                else {
+                    extensionMatch = otherBox.isSelected();
                 }
 
                 return filenameMatch && eventMatch && extensionMatch;
