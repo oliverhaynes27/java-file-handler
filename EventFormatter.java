@@ -75,6 +75,7 @@ public class EventFormatter
                "\nExtension: " + fileExtension +
                "\nTime: " + eventTime.format(FORMAT) +
                "\nPath: " + filePath +
+               "\nRelative Path: " + relativePath +
                "\nSize: " + fileSize + " bytes" +
                "\nEvent ID: " + ID;
     }
