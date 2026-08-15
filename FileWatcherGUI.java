@@ -150,10 +150,10 @@ public class FileWatcherGUI extends JFrame {
         add(sidePanel, BorderLayout.WEST);
 
         searchButton.addActionListener(e ->
-            filterTable(searchField, eventFilter, txtBox, pdfBox, javaBox, otherBox));
+            filterTable(searchField, eventFilter, allBox, txtBox, pdfBox, javaBox, otherBox));
 
         searchField.addActionListener(e -> 
-            filterTable(searchField, eventFilter, txtBox, pdfBox, javaBox, otherBox));
+            filterTable(searchField, eventFilter, allBox, txtBox, pdfBox, javaBox, otherBox));
 
         clearButton.addActionListener(e -> {
 
