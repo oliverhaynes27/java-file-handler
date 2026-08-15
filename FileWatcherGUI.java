@@ -74,6 +74,7 @@ public class FileWatcherGUI extends JFrame {
         JButton pauseButton = new JButton("Pause Monitoring");
         JButton clearHistoryButton = new JButton("Clear History");
 
+        JCheckBox allBox = new JCheckBox("All", true);
         JCheckBox txtBox = new JCheckBox("TXT", true);
         JCheckBox pdfBox = new JCheckBox("PDF", true);
         JCheckBox javaBox = new JCheckBox("Java", true);
@@ -88,8 +89,9 @@ public class FileWatcherGUI extends JFrame {
             }
         );
 
-        ActionListener extensionListener = e -> filterTable(searchField, eventFilter, txtBox, pdfBox, javaBox, otherBox);
+        ActionListener extensionListener = e -> filterTable(searchField, eventFilter, allBox, txtBox, pdfBox, javaBox, otherBox);
 
+        allBox.addActionListener(extensionListener);
         txtBox.addActionListener(extensionListener);
         pdfBox.addActionListener(extensionListener);
         javaBox.addActionListener(extensionListener);
@@ -116,6 +118,7 @@ public class FileWatcherGUI extends JFrame {
         add(bottomPanel, BorderLayout.SOUTH);
 
         sidePanel.add(new JLabel("Extensions"));
+        sidePanel.add(allBox);
         sidePanel.add(txtBox);
         sidePanel.add(pdfBox);
         sidePanel.add(javaBox);
@@ -233,7 +236,7 @@ public class FileWatcherGUI extends JFrame {
         setVisible(true);
     }
 
-    private void filterTable(JTextField searchField, JComboBox<String> eventFilter, JCheckBox txtBox, JCheckBox pdfBox, JCheckBox javaBox, JCheckBox otherBox)
+    private void filterTable(JTextField searchField, JComboBox<String> eventFilter, JCheckBox allBox, JCheckBox txtBox, JCheckBox pdfBox, JCheckBox javaBox, JCheckBox otherBox)
     {
         RowFilter<DefaultTableModel, Object> filter = new RowFilter<>() {
 
@@ -251,7 +254,10 @@ public class FileWatcherGUI extends JFrame {
 
                 boolean extensionMatch = false;
 
-                if (extension.equals("txt")) {
+                if (allBox.isSelected()){
+                    extensionMatch = true;
+                }
+                else if (extension.equals("txt")) {
                     extensionMatch = txtBox.isSelected();
                 }
                 else if (extension.equals("pdf")) {
