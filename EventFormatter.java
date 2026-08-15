@@ -4,14 +4,14 @@ import java.time.format.DateTimeFormatter;
 public class EventFormatter
 {
 
-    private String eventType;
-    private String fileName;
-    private LocalDateTime eventTime;
-    private String filePath;
-    private long fileSize;
-    private String relativePath;
-    private String fileExtension;
-    private int ID;
+    private final String eventType;
+    private final String fileName;
+    private final LocalDateTime eventTime;
+    private final String filePath;
+    private final long fileSize;
+    private final String relativePath;
+    private final String fileExtension;
+    private final int ID;
 
     private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
