@@ -71,6 +71,12 @@ public class FileWatcherGUI extends JFrame {
                     component.setForeground(table.getSelectionForeground());
                     return component;
                 }
+
+                int modelRow = table.convertRowIndexToModel(row);
+
+                String event = table.getModel().getValueAt(modelRow, 1).toString();
+
+                if ()
             }
         }
 
