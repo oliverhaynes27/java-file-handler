@@ -57,7 +57,18 @@ public class FileWatcherGUI extends JFrame {
                 int column
             ) {
 
-                
+                Component component = super.getTableCellRendererComponent(
+                    table,
+                    value,
+                    isSelected,
+                    hasFocus,
+                    row,
+                    column
+                );
+
+                if (isSelected){
+                    
+                }
             }
         }
 
