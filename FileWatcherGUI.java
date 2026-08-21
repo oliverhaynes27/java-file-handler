@@ -66,8 +66,10 @@ public class FileWatcherGUI extends JFrame {
                     column
                 );
 
-                if (isSelected){
-                    
+                if (isSelected) {
+                    component.setBackground(table.getSelectionBackground());
+                    component.setForeground(table.getSelectionForeground());
+                    return component;
                 }
             }
         }
