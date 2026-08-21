@@ -5,6 +5,7 @@ import javax.swing.table.TableRowSorter;
 import java.util.Map;
 import java.util.HashMap;
 import java.awt.event.ActionListener;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -43,6 +44,15 @@ public class FileWatcherGUI extends JFrame {
         tableModel.addColumn("Size");
 
         table = new JTable(tableModel);
+
+        DefaultTableCellRenderer rowRenderer = new DefaultTableCellRenderer() {
+            
+        }
+
+
+
+
+
         JLabel statusLabel = new JLabel("Status: Monitoring");
         statusLabel.setForeground(Color.GREEN.darker());
 
