@@ -44,41 +44,69 @@ public class FileWatcherGUI extends JFrame {
         tableModel.addColumn("Size");
 
         table = new JTable(tableModel);
+        table.setRowHeight(25);
 
-        DefaultTableCellRenderer rowRenderer = new DefaultTableCellRenderer() {
+// Colour entire row based on event type
+DefaultTableCellRenderer rowRenderer = new DefaultTableCellRenderer() {
 
-            @Override
-            public Component getTableCellRendererComponent(
-                JTable table,
-                Object value,
-                boolean isSelected,
-                boolean hasFocus,
-                int row,
-                int column
-            ) {
+    @Override
+    public Component getTableCellRendererComponent(
+            JTable table,
+            Object value,
+            boolean isSelected,
+            boolean hasFocus,
+            int row,
+            int column) {
 
-                Component component = super.getTableCellRendererComponent(
-                    table,
-                    value,
-                    isSelected,
-                    hasFocus,
-                    row,
-                    column
-                );
+        Component component = super.getTableCellRendererComponent(
+            table,
+            value,
+            isSelected,
+            hasFocus,
+            row,
+            column
+        );
 
-                if (isSelected) {
-                    component.setBackground(table.getSelectionBackground());
-                    component.setForeground(table.getSelectionForeground());
-                    return component;
-                }
-
-                int modelRow = table.convertRowIndexToModel(row);
-
-                String event = table.getModel().getValueAt(modelRow, 1).toString();
-
-                if ()
-            }
+        if (isSelected) {
+            component.setBackground(table.getSelectionBackground());
+            component.setForeground(table.getSelectionForeground());
+            return component;
         }
+
+        int modelRow = table.convertRowIndexToModel(row);
+
+        String event = table.getModel()
+                .getValueAt(modelRow, 1)
+                .toString();
+
+        if (event.startsWith("ENTRY_CREATE")) {
+
+            component.setBackground(new Color(225, 245, 225));
+            component.setForeground(new Color(0, 120, 0));
+
+        } else if (event.startsWith("ENTRY_MODIFY")) {
+
+            component.setBackground(new Color(255, 248, 220));
+            component.setForeground(new Color(180, 110, 0));
+
+        } else if (event.startsWith("ENTRY_DELETE")) {
+
+            component.setBackground(new Color(255, 230, 230));
+            component.setForeground(new Color(190, 0, 0));
+
+        } else {
+
+            component.setBackground(Color.WHITE);
+            component.setForeground(Color.BLACK);
+        }
+
+        return component;
+    }
+};
+
+// Apply renderer to every column
+for (int i = 0; i < table.getColumnCount(); i++) {
+    table.getColumnModel().getColumn(i).setCellRenderer(rowRenderer);      
 
 
 
@@ -274,7 +302,7 @@ public class FileWatcherGUI extends JFrame {
         add(topPanel, BorderLayout.NORTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
 
-        setVisible(true);
+        setVisible(true);}
     }
 
     private void filterTable(JTextField searchField, JComboBox<String> eventFilter, JCheckBox allBox, JCheckBox txtBox, JCheckBox pdfBox, JCheckBox javaBox, JCheckBox otherBox)
