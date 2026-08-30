@@ -292,11 +292,8 @@ for (int i = 0; i < table.getColumnCount(); i++) {
                 modified = 0;
                 deleted = 0;
 
-                createdLabel.setText("Created: 0");
-                modifiedLabel.setText("Modified: 0");
-                deletedLabel.setText("Deleted: 0");
-                totalLabel.setText("Total Events: 0");
-                activeFileLabel.setText("<html>Most Active:<br>None</html>");
+                statisticsModel.setRowCount(0);
+                updateStatisticsTable();
 
                 JavaFileWatcher.clearEventHistory();
 
