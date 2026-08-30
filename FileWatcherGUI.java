@@ -429,28 +429,13 @@ for (int i = 0; i < table.getColumnCount(); i++) {
                 deleted++;
             }
 
-            createdLabel.setText("Created: " + created);
-            modifiedLabel.setText("Modified: " + modified);
-            deletedLabel.setText("Deleted: " + deleted);
-            totalLabel.setText("Total Events: " + (created + modified + deleted));
-
             String fileName = event.getFileName();
 
             fileActivity.put(fileName, fileActivity.getOrDefault(fileName, 0) + 1);
 
-            String busiest = "None";
-            int highest = 0;
+            fileActivity.put(fileName, fileActivity.getOrDefault(fileName, 0) + 1);
+            updateStatisticsTable();
 
-            for(Map.Entry<String, Integer> entry : fileActivity.entrySet()) {
-                if (entry.getValue() > highest) {
-                    highest = entry.getValue();
-                    busiest = entry.getKey();
-                }
-            }
-
-            activeFileLabel.setText(
-                "<html>Most Active:<br>" + busiest + "<br>(" + highest + " events)</html>"
-            );
         });
     }
 }
