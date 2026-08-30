@@ -192,26 +192,21 @@ for (int i = 0; i < table.getColumnCount(); i++) {
 
         sidePanel.add(Box.createVerticalStrut(20));
 
-        JPanel statsPanel = new JPanel();
-        statsPanel.setLayout(new BoxLayout(statsPanel, BoxLayout.Y_AXIS));
+        JPanel statsPanel = new JPanel(new BorderLayout());
         statsPanel.setBorder(BorderFactory.createTitledBorder("Statistics"));
-        statsPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        statsPanel.setPreferredSize(new Dimension(250, 230));
+        
+        statisticsModel = new DefaultTableModel(new Object[] {"Statistic", "Value"}, 0) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        
+        statisticsTable = new JTable(statisticsModel);
 
-        createdLabel = new JLabel("Created: 0");
-        modifiedLabel = new JLabel("Modified: 0");
-        deletedLabel = new JLabel("Deleted: 0");
-        totalLabel = new JLabel("Events: 0");
-        activeFileLabel = new JLabel("<html>Most Active:<br>None</html>");
 
-        statsPanel.add(createdLabel);
-        statsPanel.add(modifiedLabel);
-        statsPanel.add(deletedLabel);
-        statsPanel.add(totalLabel);
-        statsPanel.add(Box.createVerticalStrut(10));
-        statsPanel.add(activeFileLabel);
-        statsPanel.add(clearHistoryButton);
-
-        sidePanel.add(statsPanel);
+        
 
         add(sidePanel, BorderLayout.WEST);
 
