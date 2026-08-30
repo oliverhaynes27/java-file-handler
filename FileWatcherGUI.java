@@ -352,6 +352,44 @@ for (int i = 0; i < table.getColumnCount(); i++) {
         sorter.setRowFilter(filter);
     }
 
+    private void updateStatisticsTable()
+    {
+        statisticsModel.setRowCount(0);
+        
+        int total = created + modified + deleted;
+        
+        String busiest = "None";
+        
+        int highest = 0;
+        
+        for (Map.Entry<String, Integer> entry : fileActivity.entrySet()) {
+            
+            if (entry.getValue() > highest) {
+                highest = entry.getValue();
+                busiest = entry.getKey();
+            }
+        }
+        
+        statisticsModel.addRow(new Object[] {"Files Created", created});
+        
+        statisticsModel.addRow(new Object[] {"Files Modified", modified});
+
+    statisticsModel.addRow(new Object[] {"Files Deleted", deleted});
+
+    statisticsModel.addRow(new Object[] {"Total Events",total});
+
+    statisticsModel.addRow(new Object[] {
+        "Most Active File",
+        busiest
+    });
+
+    statisticsModel.addRow(new Object[] {
+        "Activity Count",
+        highest
+    });
+}
+
+
     private void showEventDetails(int row) {
         
         row = table.convertRowIndexToModel(row);
