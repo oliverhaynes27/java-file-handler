@@ -373,21 +373,15 @@ for (int i = 0; i < table.getColumnCount(); i++) {
         statisticsModel.addRow(new Object[] {"Files Created", created});
         
         statisticsModel.addRow(new Object[] {"Files Modified", modified});
-
-    statisticsModel.addRow(new Object[] {"Files Deleted", deleted});
-
-    statisticsModel.addRow(new Object[] {"Total Events",total});
-
-    statisticsModel.addRow(new Object[] {
-        "Most Active File",
-        busiest
-    });
-
-    statisticsModel.addRow(new Object[] {
-        "Activity Count",
-        highest
-    });
-}
+        
+        statisticsModel.addRow(new Object[] {"Files Deleted", deleted});
+        
+        statisticsModel.addRow(new Object[] {"Total Events", total});
+        
+        statisticsModel.addRow(new Object[] {"Most Active File", busiest});
+        
+        statisticsModel.addRow(new Object[] {"Activity Count", highest});
+    }
 
 
     private void showEventDetails(int row) {
