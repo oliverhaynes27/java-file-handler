@@ -15,11 +15,8 @@ public class FileWatcherGUI extends JFrame {
     private DefaultTableModel tableModel;
     private TableRowSorter<DefaultTableModel> sorter;
     private JTable table;
-    private JLabel createdLabel;
-    private JLabel modifiedLabel;
-    private JLabel deletedLabel;
-    private JLabel totalLabel;
-    private JLabel activeFileLabel;
+    private JTable statisticsTable;
+    private DefaultTableModel statisticsModel;
     private Map<String, Integer> fileActivity = new HashMap<>();
 
     private int created = 0;
