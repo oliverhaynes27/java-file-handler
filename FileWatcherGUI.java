@@ -205,8 +205,21 @@ for (int i = 0; i < table.getColumnCount(); i++) {
         
         statisticsTable = new JTable(statisticsModel);
 
-
+        statisticsTable.setRowHeight(25);
+        statisticsTable.getTableHeader().setFont(
+            statisticsTable.getTableHeader().getFont().deriveFont(Font.BOLD));
+            
+        statisticsTable.getColumnModel().getColumn(0).setPreferredWidth(130);
+        statisticsTable.getColumnModel().getColumn(1).setPreferredWidth(100);
         
+        statsPanel.add(new JScrollPane(statisticsTable), BorderLayout.CENTER);
+        statsPanel.add(clearHistoryButton, BorderLayout.SOUTH);
+        
+        sidePanel.add(statsPanel);
+        
+        updateStatisticsTable();
+
+
 
         add(sidePanel, BorderLayout.WEST);
 
