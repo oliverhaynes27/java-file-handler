@@ -1,4 +1,1 @@
 ID,Event Type,File Name,Timestamp,File Size,Path
-1,ENTRY_CREATE,7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy.pdf,2026-08-21T20:28:05.255786400,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy.pdf"
-2,ENTRY_DELETE,7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy.pdf,2026-08-21T20:28:10.793849700,0,"C:\Users\olive\OneDrive\Desktop\FileTester\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy.pdf"
-3,ENTRY_MODIFY (x3),7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy.pdf,2026-08-21T20:28:10.795594800,2118074,"C:\Users\olive\OneDrive\Desktop\FileTester\7033209e-c1a5-441c-9ae0-a320434f58a2 - Copy - Copy.pdf"
