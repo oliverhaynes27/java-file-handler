@@ -242,7 +242,8 @@ for (int i = 0; i < table.getColumnCount(); i++) {
                 pauseButton.setText("Pause Monitoring");
                 statusLabel.setText("Status: Monitoring");
                 pauseButton.setForeground(Color.GREEN.darker());
-            }
+                statusLabel.setForeground(Color.GREEN.darker());
+        }
             else {
                 JavaFileWatcher.setPaused(true);
                 pauseButton.setText("Resume Monitoring");
