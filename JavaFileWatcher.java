@@ -30,12 +30,11 @@ public class JavaFileWatcher {
     private static ArrayList<EventFormatter> eventHistory = new ArrayList<>();
     public static void main(String[] args) {
         
-        SwingUtilities.invokeLater(() -> {
-            FileWatcherGUI gui = new FileWatcherGUI();
-            gui.setVisible(true);
-        });
-        
+        FileWatcherGUI gui = new FileWatcherGUI();
+        gui.setVisible(true);
+
         System.out.println("Monitoring for file activity in " + directoryPath + "...");
+    
 
     // Main method and print statement to indicate that the Watch Service has started
 

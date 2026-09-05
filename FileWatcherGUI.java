@@ -303,9 +303,8 @@ for (int i = 0; i < table.getColumnCount(); i++) {
 
         add(topPanel, BorderLayout.NORTH);
         add(new JScrollPane(table), BorderLayout.CENTER);
-
-        setVisible(true);}
-    }
+    
+    }}
 
     private void filterTable(JTextField searchField, JComboBox<String> eventFilter, JCheckBox allBox, JCheckBox txtBox, JCheckBox pdfBox, JCheckBox javaBox, JCheckBox otherBox)
     {
