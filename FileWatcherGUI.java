@@ -248,6 +248,7 @@ for (int i = 0; i < table.getColumnCount(); i++) {
                 pauseButton.setText("Resume Monitoring");
                 statusLabel.setText("Status: Paused");
                 pauseButton.setForeground(Color.RED);
+                statusLabel.setForeground(Color.RED);
             }
         });
 
