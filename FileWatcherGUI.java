@@ -167,7 +167,7 @@ for (int i = 0; i < table.getColumnCount(); i++) {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         JPanel sidePanel = new JPanel();
         sidePanel.setLayout(new BoxLayout(sidePanel, BoxLayout.Y_AXIS));
-        sidePanel.setPreferredSize(new Dimension(90, 0));
+        sidePanel.setPreferredSize(new Dimension(150, 0));
 
         topPanel.add(new JLabel("Search Filename: "));
         topPanel.add(searchField);
