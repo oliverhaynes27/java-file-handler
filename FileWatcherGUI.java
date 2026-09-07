@@ -155,6 +155,8 @@ for (int i = 0; i < table.getColumnCount(); i++) {
             }
         );
 
+        // Combo box with each category of file manipulation listed
+
         ActionListener extensionListener = e -> filterTable(searchField, eventFilter, allBox, txtBox, pdfBox, javaBox, otherBox);
 
         allBox.addActionListener(extensionListener);
