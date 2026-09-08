@@ -400,6 +400,11 @@ for (int i = 0; i < table.getColumnCount(); i++) {
         JOptionPane.showMessageDialog(this, message, "Event Details", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    private String formatFileSize(long bytes)
+    {
+        if (bytes <1024) then
+    }
+
     public void addEvent(EventFormatter event)
     {
         
