@@ -420,7 +420,7 @@ for (int i = 0; i < table.getColumnCount(); i++) {
                 event.getFileExtension(),
                 event.getEventTime(),
                 event.getRelativePath(),
-                event.getFileSize() + " bytes"
+                formatFileSize();
             });
 
             String type = event.getEventType();
