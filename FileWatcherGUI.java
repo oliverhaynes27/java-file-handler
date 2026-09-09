@@ -9,6 +9,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 import java.io.File;
 import java.nio.file.Path;
+// File path import does not hold current relevance
 
 public class FileWatcherGUI extends JFrame {
 
@@ -407,6 +408,8 @@ for (int i = 0; i < table.getColumnCount(); i++) {
         char pre = "KMGTPE".charAt(exp - 1);
         return String.format("%.2f %cB", bytes / Math.pow(1024, exp), pre);
     }
+
+    // Formatting file size to allow KB and MB to be represented, for more efficient viewing for users
 
     public void addEvent(EventFormatter event)
     {
