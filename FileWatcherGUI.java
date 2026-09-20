@@ -8,8 +8,6 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableCellRenderer;
 
 import java.io.File;
-import java.nio.file.Path;
-// File path import does not hold current relevance
 
 public class FileWatcherGUI extends JFrame {
 
