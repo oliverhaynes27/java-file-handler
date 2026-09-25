@@ -7,9 +7,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import javax.swing.SwingUtilities;
-// import of swingUtilities does not hold current relevance
-
 import java.time.Duration;
 
 // Required imports for IO Exception and file handling
